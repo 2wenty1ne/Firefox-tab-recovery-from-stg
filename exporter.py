@@ -1,6 +1,7 @@
 import json
 
-with open("backup.json", "r") as file:
+backupFilename = "backup.json"
+with open(backupFilename, "r") as file:
     data = json.load(file)
 
 groups = data["groups"]
@@ -12,7 +13,7 @@ for g in groups:
 
     tabsToOpen = []
 
-    fileName = f"files/{g['title']}.txt"
+    filename = f"files/{g['title']}.txt"
     with open(filename, "w") as file:
         counter = 0
         for tab in tabs:
